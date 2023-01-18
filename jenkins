@@ -1,19 +1,9 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('git-pull') { 
             steps {
-                echo "Build the code"
-            }
-        }
-        stage('Test') { 
-            steps {
-                echo "test the code"
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                echo "deploy the code"
+                git branch: '*/master', credentialsId: 'pranjali', url: 'git@github.com:pranjali2299/demogit.git'
             }
         }
     }
