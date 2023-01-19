@@ -1,12 +1,12 @@
 pipeline {  
   agent{
-       node ('my-node')
+       label 'my-node'
   }
     stages{
-      stage('git-pull')
+      stage('git-pull'){
         steps { 
           git credentialsId: '426c4886-6154-429b-b344-71967c531603', url: 'git@github.com:pranjali2299/demogit.git'
-          sh echo 'Hello'
+          echo 'Hello'
         }
     }
     stage('Build') { 
@@ -20,8 +20,9 @@ pipeline {
       }
     }
        stage('Deploy') { 
-      steps {
-           echo 'git deploy'
+        steps {
+         echo 'git deploy'
        } 
      } 
    }
+}
