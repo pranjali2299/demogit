@@ -1,9 +1,9 @@
 pipeline {  
   agent{
-       label 'my-node'
+       label 'agent-bigboss'
   }
     stages{
-      stage('git-pull'){
+      stage('git-pull') {
         steps { 
           git credentialsId: '426c4886-6154-429b-b344-71967c531603', url: 'git@github.com:pranjali2299/demogit.git'
           echo 'Hello'
