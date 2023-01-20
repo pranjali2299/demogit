@@ -1,6 +1,6 @@
 pipeline {  
   agent{
-       label 'cloud'
+       label 'ecs-node'
   }
     stages{
       stage('git-pull') {
