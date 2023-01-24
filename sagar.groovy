@@ -6,9 +6,11 @@ pipeline {
          git credentialsId: '4857def3-322b-4fec-957b-1ae64dc76559', url: 'git@github.com:pranjali2299/demogit.git'
         }
     }
-    stage('Build') { 
+    stage('maven-Build') { 
       steps {
-          echo 'git build successfully'
+          sh 'sudo apt-get update'
+          sh 'sudo apt-get install maven -y'
+          sh 'mvn clean package'
       }
     }
     stage('Test') { 
