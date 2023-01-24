@@ -5,7 +5,7 @@ pipeline {
     stages{
       stage('git-pull') {
         steps { 
-          git credentialsId: 'abaebc55-d7c5-4d0f-b457-269aa91f0cd5', url: 'https://github.com/pranjali2299/demogit.git'
+          git credentialsId: '4711255b-4730-4250-b972-e1590ede61ce', url: 'git@github.com:pranjali2299/demogit.git'
           echo 'Hello'
         }
     }
